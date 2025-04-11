@@ -2,7 +2,9 @@ const express = require('express');
 const {ShowData,NewData,UpdateData,DeleteData,Login}=require('./ControllerUser');
 const { ShowDataCoins, NewDataCoins, UpdateDataCoins, DeleteDataCoins,syncCoinsSchema } = require('./ControllerCoins');
 const router = express.Router();
-
+router.get('/', (req, res) => {
+  res.send('Server is running 🚀');
+});
 router.get("/users",ShowData);
 router.post("/users", NewData);
 router.put('/users/:id', UpdateData);
